@@ -37,9 +37,22 @@ class MainTest {
             System.out.println(primes);
         }
         do{
-
+            for(int i = 0; i < primes.size(); i++){
+                if (temp % primes.get(i)== 0){
+                    factors.add(primes.get(i));
+                    temp = temp / primes.get(i);
+                    break;
+                }
+            }
         }
-        while();
+        while(temp != 1);
+        System.out.println("The prime factors of " + prim + "are: ");
+        for(int i = 0; i < factors.size(); i++){
+            System.out.print(factors.get(i));
+            if (i < factors.size() - 1){
+                System.out.print(", ");
+            }
+        }
     }
 
 }
