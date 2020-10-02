@@ -1,12 +1,16 @@
 package XPExcercise;
 
+import org.junit.jupiter.api.Test;
+
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class MainTest {
 
-    void testPrimeNumber(int prim){
+class MainTest {
+    @Test
+    void testPrimeNumber(){
+        int prim = 31;
         boolean flag = true;
         for(int i = 2; i < prim; i++){
             if (prim % i == 0){
@@ -16,9 +20,9 @@ class MainTest {
         }
         assertTrue(flag);
     }
-
+    @Test
     void testPrimeFactor(){
-        int prim = 30;
+        int prim = 117;
         int temp = prim;
         ArrayList<Integer> primes = new ArrayList<>();
         ArrayList<Integer> factors = new ArrayList<>();
@@ -46,7 +50,7 @@ class MainTest {
             }
         }
         while(temp != 1);
-        System.out.println("The prime factors of " + prim + "are: ");
+        System.out.println("The prime factors of " + prim + " are: ");
         for(int i = 0; i < factors.size(); i++){
             System.out.print(factors.get(i));
             if (i < factors.size() - 1){
